@@ -70,5 +70,5 @@ export const useQuizStore = create<QuizState & QuizActions>((set, get) => ({
   
   reset: () => set(initialState),
   
-  getCurrentQuestion: () => get().currentQuestion
+  getCurrentQuestion: () => get().currentQuestionIndex
 }));

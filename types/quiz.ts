@@ -36,8 +36,10 @@ export interface Profile {
   name: string;
   description: string;
   deckTitle: string;
-  deckSubtitle: string;
+  deckSubtitle?: string;
   fullText: string;
+  color: string;
+  bgColor: string;
 }
 
 export interface QuizState {

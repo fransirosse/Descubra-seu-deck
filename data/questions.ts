@@ -127,6 +127,11 @@ export const adaptiveQuestions: {
   ]
 };
 
+export const questions: Question[] = [
+  ...baseQuestions,
+  ...adaptiveQuestions.OCCASIONAL,
+];
+
 export function getAllQuestions(level: 'NEVER_PLAYED' | 'OCCASIONAL' | 'FREQUENT'): Question[] {
   return [...baseQuestions, ...adaptiveQuestions[level]];
 }

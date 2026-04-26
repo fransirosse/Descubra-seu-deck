@@ -57,7 +57,7 @@ const DecksScreen: React.FC<DecksScreenProps> = ({ onNext }) => {
           >
             {deck.name}
           </motion.div>
-        )))}
+        ))}
       </motion.div>
       <motion.button
         onClick={onNext}

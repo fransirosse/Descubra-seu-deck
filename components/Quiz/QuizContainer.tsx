@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useQuizStore } from '@/store/quizStore';
 import { questions } from '@/data/questions';
 import { profiles } from '@/data/profiles';
@@ -37,7 +37,7 @@ const QuizContainer: React.FC = () => {
 
   const currentQuestion = questions[currentQuestionIndex];
   const accentColor = selectedProfile
-    ? profiles.find((p) => p.id === selectedProfile)?.color
+    ? profiles.find((p) => p.type === selectedProfile)?.color
     : '#3B82F6';
 
   const handleSelectAnswer = (optionIndex: number) => {
@@ -131,7 +131,7 @@ const QuizContainer: React.FC = () => {
 
         {currentScreen === 'result' && selectedProfile && (
           <ResultScreen
-            profile={profiles.find((p) => p.id === selectedProfile)!}
+            profile={profiles.find((p) => p.type === selectedProfile)!}
             onNext={handleResultNext}
           />
         )}
